@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Curso {
+class CursoTec {
     //  Nombre de los cursos
     var nombre:String = ""
     //  Las 3 notas de Teoria

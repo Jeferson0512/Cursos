@@ -27,7 +27,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var l1 = 0, l2 = 0
     var indexSeleccionado:Int = 0
     
-    //  Agregando valores a nuestra clase Curso
+/*    //  Agregando valores a nuestra clase Curso
+//      Borrando para hacer el Data Source
     func crearCursos() -> [Curso] {
         let curso1 = Curso()
         curso1.nombre = "Matemática"
@@ -39,11 +40,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         curso1.nTeo3 = 17
         return [curso1]
     }
-    
+*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cursos = crearCursos()
+        //borrando para el Data source
+//        cursos = crearCursos()
         
         cursosTVC.dataSource = self
         cursosTVC.delegate = self
@@ -70,16 +71,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Le damos un valor a mostrar en nuestra celdas
 //        cell.textLabel?.text = final
         cell.textLabel?.text = curso.nombre
+        cell.imageView!.image = UIImage(named: "Libro.jpg")
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // El gesto es de tipo Eliminar entonces...
+        if editingStyle == .delete {
+            //  Le decimos que al contenido del arreglo elimine tal posicion
+            //  indexPath.row => La posicion que el usuario selecciono
+            cursos.remove(at: indexPath.row)
+            //  Le decimos que recarge la pagina
+            tableView.reloadData()
+    }
+}
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let sigVC = segue.destination as! AddCursoVC
 //        sigVC.antVC = self
-        if segue.identifier == "addCursoS"{
+        /*Eliminando para el data Soruce
+         if segue.identifier == "addCursoS"{
             let sigVC = segue.destination as! AddCursoVC
             sigVC.antVC = self
-        }
+        }*/
         if segue.identifier == "selectCursoS"{
             let sigVC = segue.destination as! viewCursoVC
             sigVC.curso = sender as? Curso
@@ -92,7 +111,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let curso = cursos[indexPath.row]
         performSegue(withIdentifier: "selectCursoS", sender: curso)
     }
+    
+    //agregando para el Data Source
+    func obtenerCursos(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+          cursos = try context.fetch(Curso.fetchRequest()) as! [Curso]
+        } catch{
+            print("Ha ocurrido un error")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        obtenerCursos()
+        cursosTVC.reloadData()
+    }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let curso = cursos[indexPath.row]
+        if curso.nFinal >= 12 {
+            cell.backgroundColor = UIColor.green
+        }else{
+            cell.backgroundColor = UIColor.red
+        }
+    }
 
 }
-

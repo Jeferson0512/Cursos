@@ -204,10 +204,17 @@
                                 <color key="textColor" red="0.086274509803921567" green="0.32156862745098036" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP0-Pe-G6Y">
+                                <rect key="frame" x="166.5" y="558" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UAD-3E-yq2" firstAttribute="top" secondItem="2JP-bz-Mzh" secondAttribute="bottom" constant="15" id="0xD-jV-rZa"/>
+                            <constraint firstItem="RP0-Pe-G6Y" firstAttribute="centerX" secondItem="ZBI-JR-Q8N" secondAttribute="centerX" id="1lq-Qi-27H"/>
                             <constraint firstItem="NjH-S7-wWJ" firstAttribute="top" secondItem="XhR-1e-dAU" secondAttribute="bottom" constant="31" id="34C-oc-SQy"/>
                             <constraint firstItem="2JP-bz-Mzh" firstAttribute="leading" secondItem="uV9-ic-1Ro" secondAttribute="trailing" constant="152" id="6Te-mM-WQf"/>
                             <constraint firstItem="ivg-FO-XxB" firstAttribute="leading" secondItem="UZo-AZ-q9M" secondAttribute="trailing" constant="75" id="AfH-Xa-1Ia"/>
@@ -256,8 +263,10 @@
                             <constraint firstItem="UZo-AZ-q9M" firstAttribute="leading" secondItem="dCQ-lN-v6K" secondAttribute="leading" constant="23" id="sv2-b2-KcJ"/>
                             <constraint firstItem="z4q-zn-osO" firstAttribute="leading" secondItem="lip-aS-azh" secondAttribute="trailing" constant="153" id="t3f-iJ-Kkp"/>
                             <constraint firstItem="dCQ-lN-v6K" firstAttribute="trailing" secondItem="aNB-sl-3x2" secondAttribute="trailing" constant="54" id="tSf-dW-jgN"/>
+                            <constraint firstItem="RP0-Pe-G6Y" firstAttribute="top" secondItem="rcT-RX-WRL" secondAttribute="bottom" constant="25" id="trK-mS-ooj"/>
                             <constraint firstItem="NjH-S7-wWJ" firstAttribute="top" secondItem="cL5-1u-xey" secondAttribute="bottom" constant="31" id="u4b-vR-dCx"/>
                             <constraint firstItem="OU1-UG-D6T" firstAttribute="leading" secondItem="dCQ-lN-v6K" secondAttribute="leading" constant="47" id="wnq-cp-Bjb"/>
+                            <constraint firstItem="RP0-Pe-G6Y" firstAttribute="top" secondItem="MtD-85-UDA" secondAttribute="bottom" constant="25" id="x6H-wG-mOV"/>
                             <constraint firstItem="dCQ-lN-v6K" firstAttribute="trailing" secondItem="UAD-3E-yq2" secondAttribute="trailing" constant="54" id="xGd-ao-mUy"/>
                             <constraint firstItem="x8A-3n-gDj" firstAttribute="top" secondItem="BGj-ng-xwW" secondAttribute="bottom" constant="20" id="xIu-BL-sIL"/>
                             <constraint firstItem="Izl-Gq-SfH" firstAttribute="top" secondItem="XhR-1e-dAU" secondAttribute="bottom" constant="31" id="xi2-bd-B2l"/>
@@ -274,6 +283,7 @@
                         <outlet property="nTeo2" destination="UAD-3E-yq2" id="lIS-1V-LKU"/>
                         <outlet property="nTeo3" destination="cL5-1u-xey" id="1kY-nl-SAW"/>
                         <outlet property="nombreCurso" destination="BGj-ng-xwW" id="n4A-Iu-xaG"/>
+                        <outlet property="notaFFinal" destination="RP0-Pe-G6Y" id="s0r-IG-e6e"/>
                         <outlet property="promFinal" destination="rcT-RX-WRL" id="Q1b-Nn-VT7"/>
                         <outlet property="promLabFinal" destination="Izl-Gq-SfH" id="7LY-se-Wnb"/>
                         <outlet property="promTeoFinal" destination="x8A-3n-gDj" id="f7v-1h-5bm"/>

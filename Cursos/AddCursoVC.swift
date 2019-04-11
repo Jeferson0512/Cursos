@@ -27,12 +27,27 @@ class AddCursoVC: UIViewController {
     var lab2:String = ""
     var lab3:String = ""
     
+    var nteo1:Int64 = 0
+    var nteo2:Int64 = 0
+    var nteo3:Int64 = 0
+    var nlab1:Int64 = 0
+    var nlab2:Int64 = 0
+    var nlab3:Int64 = 0
+    var nteoFinal:Int64 = 0
+    var nlabFinal:Int64 = 0
+    var nfinal:Int64 = 0
+
+    /*Borrrando para el datasource
     //  Llamada a nuestro princiapl VC
-    var antVC = ViewController()
+    var antVC = ViewController()*/
     
     //  funciones para realizar ciertas tareas
     @IBAction func addCurso(_ sender: Any) {
-        let curso = Curso()
+        //agregado para usar el datasource
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let curso = Curso(context: context)
+        //borrando para el datasource
+//        let curso = Curso()
         curso.nombre = txtNameCurso.text!
         
         //        convertir de un string a int teoria
@@ -43,18 +58,42 @@ class AddCursoVC: UIViewController {
         lab2 = txtLab2.text!
         lab3 = txtLab3.text!
         
-        //  llamando el valor
-        curso.nTeo1 = Int(teo1)!
-        curso.nTeo2 = Int(teo2)!
-        curso.nTeo3 = Int(teo3)!
-        curso.nLab1 = Int(lab1)!
-        curso.nLab2 = Int(lab2)!
-        curso.nLab3 = Int(lab3)!
+        //  convirtiendo a int pra subir notas
+        nteo1 = Int64(teo1)!
+        nteo2 = Int64(teo2)!
+        nteo3 = Int64(teo3)!
+        nlab1 = Int64(lab1)!
+        nlab2 = Int64(lab2)!
+        nlab3 = Int64(lab3)!
         
+        nteoFinal = (nteo1 + nteo2 + nteo3) / 3
+        nlabFinal = (nlab1 + nlab2 + nlab3) / 3
+        
+        nfinal = (nteoFinal + nlabFinal) / 2
+//        print(nfinal)
+        
+        //  llamando el valor
+        curso.nTeo1 = nteo1
+        curso.nTeo2 = nteo2
+        curso.nTeo3 = nteo3
+        curso.nLab1 = nlab1
+        curso.nLab2 = nlab2
+        curso.nLab3 = nlab3
+        curso.nFinal = nfinal
+        
+        
+        /*borrando para el data source
         //  agregando a curso
         antVC.cursos.append(curso)
         antVC.cursosTVC.reloadData()
+ */
+        
+        //agregando para dataSource
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        
         navigationController!.popViewController(animated: true)
+        
     }
     
     override func viewDidLoad() {

@@ -25,18 +25,21 @@ class viewCursoVC: UIViewController {
     @IBOutlet weak var nLab2: UILabel!
     @IBOutlet weak var nLab3: UILabel!
     
+    @IBOutlet weak var notaFFinal: UILabel!
     //    declaracion de variables de notas {teoria y laboratorio}
-    var nteo1:Int = 0
-    var nteo2:Int = 0
-    var nteo3:Int = 0
-    var nlab1:Int = 0
-    var nlab2:Int = 0
-    var nlab3:Int = 0
+    var nteo1:Int64 = 0
+    var nteo2:Int64 = 0
+    var nteo3:Int64 = 0
+    var nlab1:Int64 = 0
+    var nlab2:Int64 = 0
+    var nlab3:Int64 = 0
     
     //  declaracion de variables para notas finanles tanto para teoria y laboratorio
-    var nteofinal:Int = 0
-    var nlabfinal:Int = 0
-    var notafinal:Int = 0
+    var nteofinal:Int64 = 0
+    var nlabfinal:Int64 = 0
+    var notafinal:Int64 = 0
+    
+    var nffinal: Int64 = 0
     
     
     override func viewDidLoad() {
@@ -63,6 +66,8 @@ class viewCursoVC: UIViewController {
         nLab2.text = String(nlab2)
         nLab3.text = String(nlab3)
         
+        nffinal = (curso?.nFinal)!
+        
         //  notas finales de Teoria y Laboratorio
         nteofinal = (nteo1 + nteo2 + nteo3) / 3
         promTeoFinal.text = String(nteofinal)
@@ -72,6 +77,7 @@ class viewCursoVC: UIViewController {
 //        //  Nota final redondeado
         notafinal = (nteofinal + nlabfinal) / 2
         promFinal.text = String(notafinal)
+        notaFFinal.text = String(nffinal)
     }
     
 
