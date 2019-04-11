@@ -13,6 +13,9 @@
 		1FF24E6D225F9C5500C6B340 /* Cursos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FF24E6B225F9C5500C6B340 /* Cursos.xcdatamodeld */; };
 		1FF24E6F225F9C5700C6B340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF24E6E225F9C5700C6B340 /* Assets.xcassets */; };
 		1FF24E72225F9C5700C6B340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF24E70225F9C5700C6B340 /* LaunchScreen.storyboard */; };
+		1FF24E7C225F9DAF00C6B340 /* Curso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF24E7B225F9DAF00C6B340 /* Curso.swift */; };
+		1FF24E7E225FAF5600C6B340 /* AddCursoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF24E7D225FAF5600C6B340 /* AddCursoVC.swift */; };
+		1FF24E82225FB96300C6B340 /* viewCursoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF24E81225FB96300C6B340 /* viewCursoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1FF24E6E225F9C5700C6B340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FF24E71225F9C5700C6B340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FF24E73225F9C5700C6B340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FF24E7B225F9DAF00C6B340 /* Curso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curso.swift; sourceTree = "<group>"; };
+		1FF24E7D225FAF5600C6B340 /* AddCursoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCursoVC.swift; sourceTree = "<group>"; };
+		1FF24E81225FB96300C6B340 /* viewCursoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewCursoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				1FF24E64225F9C5500C6B340 /* AppDelegate.swift */,
+				1FF24E7B225F9DAF00C6B340 /* Curso.swift */,
 				1FF24E66225F9C5500C6B340 /* ViewController.swift */,
+				1FF24E7D225FAF5600C6B340 /* AddCursoVC.swift */,
+				1FF24E81225FB96300C6B340 /* viewCursoVC.swift */,
 				1FF24E68225F9C5500C6B340 /* Main.storyboard */,
 				1FF24E6E225F9C5700C6B340 /* Assets.xcassets */,
 				1FF24E70225F9C5700C6B340 /* LaunchScreen.storyboard */,
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF24E82225FB96300C6B340 /* viewCursoVC.swift in Sources */,
 				1FF24E6D225F9C5500C6B340 /* Cursos.xcdatamodeld in Sources */,
+				1FF24E7E225FAF5600C6B340 /* AddCursoVC.swift in Sources */,
 				1FF24E67225F9C5500C6B340 /* ViewController.swift in Sources */,
+				1FF24E7C225F9DAF00C6B340 /* Curso.swift in Sources */,
 				1FF24E65225F9C5500C6B340 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
